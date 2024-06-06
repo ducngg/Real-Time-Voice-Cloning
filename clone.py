@@ -34,11 +34,11 @@ if __name__ == '__main__':
         "If True, audio won't be played.")
     parser.add_argument("--seed", type=int, default=None, help=\
         "Optional random number seed value to make toolbox deterministic.")
-    parser.add_argument("--source", type=Path, required=True, help=\
+    parser.add_argument("--source", type=str, required=True, help=\
         "Path to source voice (.mp3).")
-    parser.add_argument("--text", type=Path, default="", help=\
+    parser.add_argument("--text", type=str, default="", help=\
         "Path to text file (.txt).")
-    parser.add_argument("--output", type=Path, default="", help=\
+    parser.add_argument("--output", type=str, default="", help=\
         "Output name.")
     args = parser.parse_args()
     arg_dict = vars(args)
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     
     try:
         # Audio filepath
-        in_fpath = Path(args.source.replace("\"", "").replace("\'", ""))
+        in_fpath = Path(args.source)
 
         ## Computing the embedding
         # First, we load the wav using the function that the speaker encoder provides. This is
@@ -144,7 +144,7 @@ if __name__ == '__main__':
         if args.output == "":
             filename = "output.wav"
         else:
-            filename = args.output + ".wav"
+            filename = str(args.output) + ".wav"
 
         print(generated_wav.dtype)
         sf.write(filename, generated_wav.astype(np.float32), synthesizer.sample_rate)

@@ -8,7 +8,7 @@ python clone.py --source <path to .mp3> --text <path to .txt> --output <output f
 
 Example:
 ```bash
-python clone.py --source people/taylor/taylor35-45.np3 --text texts/test1.txt --output taylor-test1.wav
+python clone.py --source people/taylor/taylor35-45.mp3 --text texts/test1.txt --output taylor-test1
 ```
 
 `--text` is optional, if not provide then you will be required to provide the text in the CLI.
