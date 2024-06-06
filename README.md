@@ -1,3 +1,20 @@
+# Instant clone voice
+
+After install all the dependencies, you can run the following command:
+
+```bash
+python clone.py --source <path to .mp3> --text <path to .txt> --output <output file name>
+```
+
+Example:
+```bash
+python clone.py --source people/taylor/taylor35-45.np3 --text texts/test1.txt --output taylor-test1.wav
+```
+
+`--text` is optional, if not provide then you will be required to provide the text in the CLI.
+
+`--output` is optional, if not provide then the default output file is `output.wav`.
+
 # Real-Time Voice Cloning
 This repository is an implementation of [Transfer Learning from Speaker Verification to
 Multispeaker Text-To-Speech Synthesis](https://arxiv.org/pdf/1806.04558.pdf) (SV2TTS) with a vocoder that works in real-time. This was my [master's thesis](https://matheo.uliege.be/handle/2268.2/6801).
